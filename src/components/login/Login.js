@@ -122,13 +122,9 @@ function Login() {
               <hr />
             </div>
             <div className="login__regis">
-<<<<<<< HEAD
-              <button type="button"><a href="http://localhost:3000/register" className="text-success">Tạo tài khoản</a></button>
-=======
               <button type="button">
                 <a href="http://localhost:3000/register">Tạo tài khoản</a>
               </button>
->>>>>>> 5c137a0618413fff2c5d3eecd3e36be8c8847335
             </div>
           </form>
         </div>

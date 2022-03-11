@@ -8,19 +8,9 @@ import Friends from "../components/main/Friends";
 import { ImageViewer } from "react-image-viewer-dv";
 import Header from "../components/main/Header";
 import "../css/Profile.css";
-import Header from "../components/main/Header";
 
 function Profile() {
-<<<<<<< HEAD
-  const [onPost, setOnPost] = useState(true);
-  const [onAbout, setOnAbout] = useState(false);
-  const [onFriend, setOnFriend] = useState(false);
-  const [onPhoto, setOnPhoto] = useState(false);
-  const [onVideo, setOnVideo] = useState(false);
-  const [status, setStatus] = useState(1);
-=======
   const [status, onStatus] = useState(null);
->>>>>>> 5c137a0618413fff2c5d3eecd3e36be8c8847335
 
   const handleClick = (step) => {
     onStatus(step);
