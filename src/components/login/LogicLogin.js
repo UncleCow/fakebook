@@ -10,7 +10,6 @@ const checkLogin = () => {
         if(name === "id"){
             id = value;
         }
-        
     })
     return id;
 }

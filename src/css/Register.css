@@ -19,7 +19,7 @@
 
 .form__control {
     position: relative;
-    margin: 40px 0;
+    margin: 30px 0;
     border-bottom: 2px solid #adadad;
 }
 
@@ -29,6 +29,7 @@
     font-size: 16px;
     outline: none;
     border: none;
+    padding: 0 20px;
 }
 
 .form__control  span::before {
@@ -93,4 +94,38 @@
 
 .form__signup a:hover {
     text-decoration: underline;
+}
+
+/* Birthday */
+.form__birthday {
+    margin-top: 50px;
+}
+
+.form__birthday > p {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.form__birthday > input {
+    font-size: 18px;
+}
+
+/* Gentle */
+.form__gentle {
+    font-size: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.form__gentle > label {
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+#male,
+#female {
+    width: 20px;
+    height: 20px;
+    margin-left: 8px;
 }

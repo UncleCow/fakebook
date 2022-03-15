@@ -1,6 +1,10 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { storage } from "./index";
 import { getDownloadURL, ref, uploadBytesResumable } from "@firebase/storage";
+import checkLogin from "../components/login/LogicLogin";
+import NotFound from "../components/main/NotFound";
+import { fetchAllInfo } from "../store/actions/information";
 
 const UploadDemo = () => {
   const [progress, setProgress] = useState(0);
@@ -33,13 +37,30 @@ const UploadDemo = () => {
     );
   };
 
+  const idlogin = checkLogin();
+  console.log("idlogin", idlogin);
+  let [isAdmin, setIsAdmin] = useState("");
+  const check = async () => {
+    await fetchAllInfo(idlogin).then((data) => {
+      setIsAdmin(data.role_id);
+    });
+  };
+  check();
+  console.log("isAdmin", isAdmin);
+
   return (
-    <div>
-      <form onSubmit={formHandler}>
-        <input type="file" className="input" />
-        <button type="submit">Upload</button>
-      </form>
-      <h3>Uploaded {progress}%</h3>
+    <div style={{width: "100%"}}>
+      {isAdmin ? (
+        <div style={{width: "100%"}}>
+          <form onSubmit={formHandler}>
+            <input type="file" className="input" />
+            <button type="submit">Upload</button>
+          </form>
+          <h3>Uploaded {progress}%</h3>
+        </div>
+      ) : (
+        <NotFound />
+      )}
     </div>
   );
 };

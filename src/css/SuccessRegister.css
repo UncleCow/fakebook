@@ -1,0 +1,35 @@
+.success {
+    background-color: #e5e5e5;
+    margin: 80px auto;
+}
+
+.success__form {
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.success__notice {
+    background-color: #8ac349;
+    padding: 30px 0;
+    color: #fff;
+    text-align: center;
+}
+
+.success__notice > p {
+    font-size: 20px;
+}
+
+.success__content {
+
+}
+
+.success__content-text {
+    margin: 20px;
+    font-size: 20px;
+}
+
+.success__content-text > p {
+    
+    font-size: 18px;
+}

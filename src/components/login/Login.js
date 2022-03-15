@@ -24,7 +24,7 @@ function Login() {
 
   const validateAll = () => {
     const messages = {};
-    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    var mailformat = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
     if (isEmpty(email)) {
       messages.email = "Please input your email";
     } else if (!email.match(mailformat)) {
@@ -42,7 +42,9 @@ function Login() {
 
   const dispatch = useDispatch();
   const saveUser = useCallback((data) => {
+    console.log("dang sava data");
     dispatch({ type: "AUTHENTICATION", id: data.id });
+    dispatch({ type: "SAVEUSER", user: data});
   }, []);
 
   const handleSubmit = async () => {
@@ -57,6 +59,7 @@ function Login() {
           document.cookie = `id=${data.id};max-age=60*60*24`;
           document.cookie = `username=${data.username};max-age=60*60*24`;
           if (data.id) {
+            console.log("Da dang nhap");
             console.log(data);
             saveUser(data);
           }
@@ -123,7 +126,7 @@ function Login() {
             </div>
             <div className="login__regis">
               <button type="button">
-                <a href="http://localhost:3000/register">Tạo tài khoản</a>
+                <a style={{color: '#fff'}} href="http://localhost:3000/register">Tạo tài khoản</a>
               </button>
             </div>
           </form>

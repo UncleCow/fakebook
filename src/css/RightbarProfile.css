@@ -54,6 +54,7 @@
 }
 
 .rightbarFollowingName {
+  max-width: 100px;
   display: block;
   text-align: center;
   color: black;

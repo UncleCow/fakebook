@@ -1,31 +1,29 @@
 import { AUTHENTICATION } from "../actions/auth";
 
 const initState = {
-    user: null,
-    userId: null,
-    test: null,
-}
+  user: null,
+  userId: null,
+  test: null,
+};
 
-const reducer = (state = initState, action) => {
-    switch (action.type)    {
-        case AUTHENTICATION : {
-            console.log("action", action);
-            return{
-                ...state,
-                userId: action.id,
-            }
-        }
-        case "test" :{
-            return {
-                ...state,
-                test: action.test
-            }
-        }
-        default :{
-            return state;
-        }
+export default (state = initState, action) => {
+  switch (action.type) {
+    case AUTHENTICATION: {
+      // console.log("action", action);
+      // console.log("id", action.id);
+      state = { ...state, userId: action.id };
+      break;
     }
-    
-}
-
-export default reducer;
+    case "SAVEUSER": {
+      console.log("action", action);
+      console.log("user", action.user);
+      state = {
+        ...state,
+        user: action.user,
+      };
+      break;
+    }
+  }
+  // console.log("state", state);
+  return state;
+};

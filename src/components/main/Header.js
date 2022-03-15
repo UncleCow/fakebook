@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import HomeIcon from "@mui/icons-material/Home";
 import SubscriptionsIcon from "@mui/icons-material/Subscriptions";
@@ -10,9 +10,25 @@ import ForumSharpIcon from "@mui/icons-material/ForumSharp";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import ArrowDropDownRoundedIcon from "@mui/icons-material/ArrowDropDownRounded";
 import { Avatar, IconButton } from "@mui/material";
+import MessengerTab from "../messenger/MessengerTab";
 import "../../css/Header.css";
+import checkLogin from "../login/LogicLogin";
+import { fetchAllInfo } from "../../store/actions/information";
 
 function Header() {
+  const id = checkLogin();
+  const [user, setUser] = useState();
+  useEffect(async () => {
+    console.log(id);
+    await fetchAllInfo(id).then((data) => {
+      console.log(data);
+      setUser(data);
+    });
+    // await fetch9Friends(id).then((data) => {
+    //   console.log(data);
+    //   setListFriend(data);
+    // })
+  }, []);
   return (
     <div className="header">
       <div className="header__left">
@@ -50,24 +66,33 @@ function Header() {
 
       <div className="header__right">
         <div className="header__info">
-          <Avatar src="https://scontent.fsgn2-3.fna.fbcdn.net/v/t1.6435-9/168600690_132095425540608_6073473717300407730_n.jpg?_nc_cat=106&ccb=1-5&_nc_sid=09cbfe&_nc_ohc=vg7DV1MP-BYAX9JsA28&_nc_ht=scontent.fsgn2-3.fna&oh=00_AT-je9MJKVwSjpgQl2fVG_2P2wRDpvEf6QAw5nXU4mQYKw&oe=623B24D4" />
+          <Avatar
+            src={
+              user
+                ? user.avatar
+                : "https://firebasestorage.googleapis.com/v0/b/fakestory-9fb8d.appspot.com/o/file%2FdefaultAvatar.png?alt=media&token=8042470b-2bd9-4f51-825f-d62bb94f6e7b"
+            }
+          />
           <a href="/profile">
-            <h4>Huy</h4>
+            <h4>{user ? user.fullname : ""}</h4>
           </a>
         </div>
 
-        <IconButton className="header__right-icon">
+        <MessengerTab />
+
+        {/* <IconButton className="header__right-icon">
           <AppRegistrationRoundedIcon />
         </IconButton>
         <IconButton className="header__right-icon">
-          <ForumSharpIcon />
+          <ForumSharpIcon className="is_icon" uk-tooltip="title: Message">
+          </ForumSharpIcon>
         </IconButton>
         <IconButton className="header__right-icon">
           <NotificationsIcon />
         </IconButton>
         <IconButton className="header__right-icon">
           <ArrowDropDownRoundedIcon />
-        </IconButton>
+        </IconButton> */}
       </div>
     </div>
   );
