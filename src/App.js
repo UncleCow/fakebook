@@ -27,20 +27,8 @@ const rootReducer = combineReducers({
 let store = createStore(rootReducer);
 
 function App() {
-<<<<<<< HEAD
   // const isLogin = checkLogin();
   const isLogin = true;
-=======
-  let [isAdmin, setIsAdmin] = useState("");
-  const check = async () => {
-    await fetchAllInfo(6).then((data) => {
-      setIsAdmin(data.role_id);
-    });
-  };
-  check();
-  const isLogin = checkLogin();
-
->>>>>>> c18a0d94f402a4e71da1999f90245756fee86387
   return (
     <Provider store={store}>
       <div className="app">

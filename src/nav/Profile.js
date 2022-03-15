@@ -7,12 +7,6 @@ import Photos from "../components/main/Photos";
 import Friends from "../components/main/Friends";
 import { ImageViewer } from "react-image-viewer-dv";
 import "../css/Profile.css";
-<<<<<<< HEAD
-
-function Profile() {
-  const [status, onStatus] = useState(null);
-
-=======
 import Header from "../components/main/Header";
 import checkLogin from "../components/login/LogicLogin";
 import { fetch9Friends, fetchAllInfo } from "../store/actions/information";
@@ -37,7 +31,6 @@ function Profile(props) {
       setListFriend(data);
     })
   },[]);  
->>>>>>> c18a0d94f402a4e71da1999f90245756fee86387
   const handleClick = (step) => {
     onStatus(step);
   };
