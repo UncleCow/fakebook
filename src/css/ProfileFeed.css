@@ -1,0 +1,21 @@
+.subFeed {
+  flex: 0.8;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+@media only screen and (max-width: 768px) {
+  .subFeed {
+    width: 78%;
+    padding: 1px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 0;
+  }
+
+  .button {
+    width: 100%;
+  }
+}

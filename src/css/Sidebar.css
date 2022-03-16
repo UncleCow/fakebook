@@ -1,0 +1,21 @@
+.sidebar {
+  padding: 25px 30px;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 50px);
+  overflow-y: scroll;
+}
+
+.sidebarFooter {
+  border-top: 1px rgb(196, 191, 191) solid;
+}
+
+.sidebarFooter span {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.titleSidebarFooter {
+  padding: 2px 11px;
+  margin: 5px 0;
+}

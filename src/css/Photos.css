@@ -1,0 +1,70 @@
+.photoWrapper {
+  background-color: white;
+  margin: 2rem 4.8rem;
+  width: 100%;
+  padding: 3rem 5rem;
+  border: 1px solid rgba(185, 185, 185, 0.493);
+  border-radius: 8px;
+}
+
+.iconImage {
+  color: black;
+}
+
+.photoBarTitle {
+  display: flex;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgb(230, 230, 230);
+}
+
+.photoTitle {
+  font-weight: 600;
+  color: black;
+}
+
+.photoBarDetail {
+  display: block;
+  flex-direction: row;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.photoCollection {
+  display: flex;
+  max-width: fit-content;
+}
+
+.photoList {
+  padding-left: 0.7rem;
+}
+
+.photoCollection img {
+  width: 100%;
+  display: block;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.imgView {
+  position: relative;
+}
+
+.imgView img{
+  width: 500px;
+  height: 160px;
+}
+
+.buttonDel {
+  position: absolute;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 50%;
+  background-color: rgba(46, 46, 46, 0.404);
+  top: 2px;
+  right: 2px;
+  color: white;
+}
+
+.buttonDel:hover {
+  background-color: rgba(141, 141, 141, 0.404);
+}

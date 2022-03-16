@@ -1,0 +1,79 @@
+.group {
+    background-color: #fff;
+    width: 100%;
+}
+
+.content {
+    padding: 0;
+}
+
+.group__content {
+    text-align: center;
+}
+
+.group__info {
+    padding: 16px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.group__img {
+    display: inline;
+    width: 940px;
+    height: 350px;
+    text-align: center;
+}
+
+.group__info-name > h1 {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.group__info-desc {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.group__info-desc > p,
+.group__info-desc > h5 {
+    margin: 0 6px;
+    font-size: 16px;
+}
+
+.group__info-lock {
+    font-size: 100px;
+}
+
+.group__info-members {
+    display: flex;
+    position: relative;
+}
+
+.group__info-member {
+    max-width: 100%;
+    min-width: 0px;
+}
+
+.group__info-right {
+    position: relative;
+}
+
+.group__right-content {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+}
+
+.group__invite-btn {
+    border: none;
+    font-size: 16px;
+    padding: 8px 12px;
+    background-color: #de5b00;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 4px;
+    margin-right: 10px;
+}

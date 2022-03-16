@@ -1,0 +1,29 @@
+/* Scrollbar chat-users */
+
+.mCustomScrollbar {
+  display: flex;
+  flex-direction: row;
+}
+
+.chat-users {
+  flex: 1;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(196, 196, 196);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(219, 219, 219);
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(201, 193, 193);
+}

@@ -1,0 +1,142 @@
+.post {
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 0px 5px 7px -7px rgba(0, 0, 0, 0.75);
+    padding: 0;
+}
+
+.post__top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-top: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.post__avatar {
+  flex: 0.1;
+}
+
+.post__top-info {
+  flex: 1;
+}
+
+.post__top-info h3 {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.post__top-info p {
+  font-size: 14px;
+  margin: 0 !important; 
+}
+
+.post__top-more {
+  flex: right;
+  padding: 8px;
+}
+
+.post__top-more:hover {
+  background-color: rgb(170, 170, 170, 0.3);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.post__bottom {
+  padding: 4px 16px 16px;
+}
+
+.post__bottom p {
+  margin: 0;
+  font-size: 15px;
+}
+
+.post__quantity {
+  margin: 0 16px;
+  padding: 10px 0;
+  display: flex;
+  justify-content:space-between;
+}
+.post__image {
+  max-height: 600px;
+  overflow: hidden;
+}
+
+.post__image img{
+  height: 100%;
+  
+  width: 100%;
+}
+
+
+.post__options {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 12px;
+}
+
+.post__option {
+  display: flex;
+  align-items: center;
+  padding: 5px 50px;
+}
+
+.post__option:hover {
+  background-color: rgb(201, 201, 201, 0.4);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.post__option p {
+  margin: 0 5px;
+}
+
+/* COMMENT */
+.post__comment {
+  padding: 4px 16px;
+  margin: 4px 0;
+  display: flex;
+  align-items: center;
+}
+
+.post__comment-input {
+  width: 100%;
+}
+
+.post__comment-input input {
+  background-color: #f0f2f5;
+  margin-left: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+}
+
+.show__comment {
+  padding: 4px 0 0 16px;
+  display: flex;
+}
+
+.show__comment-details {
+  margin-left: 8px;
+}
+
+.show__comment-details--top {
+  padding: 6px 12px;
+  background-color: #f0f2f5;
+  border-radius: 18px;
+}
+
+.show__comment-content p {
+  margin: 0;
+}
+
+.show__comment-details--bottom {
+  display: flex;
+  align-items: center;
+}
+
+.show__comment-details--bottom > div {
+  margin-left: 16px;
+}

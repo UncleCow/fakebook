@@ -1,0 +1,135 @@
+.rightbarWrapper {
+  padding: 30px 80px;
+}
+
+.rightbarTitle {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.rightbarInfo {
+  margin-bottom: 30px;
+}
+
+.rightbarInfoItem {
+  margin-bottom: 10px;
+}
+
+.rightbarInfoValue {
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.rightbarInfoValue b {
+  font-weight: 600;
+  color: black;
+}
+
+.rightBarInfoKey {
+  font-weight: 500;
+  margin-right: 15px;
+  color: #555;
+}
+
+.rightbarFollowings {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 370px;
+}
+
+.rightbarFollowing {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+.rightbarFollowingImg {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.rightbarFollowingName {
+  max-width: 100px;
+  display: block;
+  text-align: center;
+  color: black;
+}
+
+.subWrapper {
+  border: 1px solid white;
+  padding: 30px 20px;
+  margin: 20px 0;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.subWrapper a {
+  text-decoration: none;
+}
+
+.rightbarNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button {
+  display: block;
+  text-decoration: none;
+  background-color: rgb(216, 216, 216);
+  padding: 0.5rem 10rem;
+  border-radius: 7px;
+  border: none;
+}
+
+.button:hover {
+  background-color: rgb(179, 179, 179);
+  border: none;
+}
+
+.buttonFriends {
+  color: rgb(41, 41, 223);
+  margin-bottom: 10px;
+  padding: 10px;
+  border: none;
+  background-color: white;
+}
+
+.buttonFriends:focus {
+  border: none;
+  outline: none;
+}
+
+.buttonFriends:active {
+  border: none;
+  outline: none;
+}
+
+.buttonFriends:hover {
+  background-color: rgb(216, 216, 216);
+  color: rgb(41, 41, 223);
+  border-radius: 7px;
+}
+
+@media only screen and (max-width: 768px) {
+  .rightbarWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .subWrapper {
+    width: 100%;
+  }
+
+  .rightbarFollowings {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+  }
+}

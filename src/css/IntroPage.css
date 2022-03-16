@@ -1,0 +1,15 @@
+.intro__middle-mess--logo {
+    width: 100%;
+    display: flex;
+}
+
+.intro__middle-mess--logo a {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #eef1f5;
+}

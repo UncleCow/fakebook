@@ -1,0 +1,50 @@
+.aboutWrapper {
+  background-color: white;
+  margin: 2rem 4.8rem;
+  width: 100%;
+  padding: 3rem 5rem;
+  border: 1px solid rgba(185, 185, 185, 0.493);
+  border-radius: 8px;
+}
+
+.aboutBarTitle {
+  display: flex;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgb(230, 230, 230);
+}
+
+.inconInfo {
+  color: black;
+}
+
+.aboutTitle {
+  font-weight: 600;
+  color: black;
+}
+
+.aboutBarDetail {
+  margin-top: 1rem;
+}
+
+.aboutBarItem {
+  padding-bottom: 0.7rem;
+}
+
+.buttonEdit {
+  display: block;
+  text-decoration: none;
+  background-color: rgb(216, 216, 216);
+  padding: 0.5rem 30rem;
+  margin: 0 auto;
+  border-radius: 7px;
+  border: none;
+  margin-top: 0.5rem;
+}
+
+.buttonEdit:hover {
+  background-color: rgb(179, 179, 179);
+}
+
+.formEditTitle h4 {
+  font-weight: 400;
+}

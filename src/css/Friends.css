@@ -1,0 +1,76 @@
+.friendWrapper {
+  background-color: white;
+  margin: 2rem 4.8rem;
+  width: 100%;
+  padding: 3rem 5rem;
+  border: 1px solid rgba(185, 185, 185, 0.493);
+  border-radius: 8px;
+}
+
+.iconPeople {
+  color: black;
+  padding-right: 0.25rem;
+}
+
+.friendBarTitle {
+  display: flex;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgb(230, 230, 230);
+}
+
+.friendTitle {
+  font-weight: 600;
+  color: black;
+}
+
+.friendBarDetail {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.friendCollection {
+  max-width: fit-content;
+  display: flex;
+}
+
+.friendList {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-right: 5rem;
+  border: 1px solid rgb(240, 240, 240);
+  box-shadow: 0 0 2px 1px rgba(191, 191, 191, 0.34);
+  border-radius: 7px;
+}
+
+.friendList img {
+  width: 50%;
+  cursor: pointer;
+  border-radius: 50px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.friendList a {
+  padding-top: 90px;
+  padding-bottom: 90px;
+  font-size: 15px;
+  color: black;
+  margin-right: 2rem;
+}
+
+.friendList a:hover {
+  text-decoration: underline;
+}
+
+.friendList button {
+  margin-top: 85px;
+  margin-bottom: 95px;
+  border: none;
+  background-color: white;
+}
+
+.friendList button:hover {
+  background-color: rgb(194, 194, 194);
+  border-radius: 50%;
+}
