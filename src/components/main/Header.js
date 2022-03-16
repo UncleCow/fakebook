@@ -65,7 +65,7 @@ function Header() {
       </div>
 
       <div className="header__right">
-        <div className="header__info">
+        {/* <div className="header__info">
           <Avatar
             src={
               user
@@ -76,7 +76,7 @@ function Header() {
           <a href="/profile">
             <h4>{user ? user.fullname : ""}</h4>
           </a>
-        </div>
+        </div> */}
 
         <MessengerTab />
 

@@ -18,6 +18,7 @@ import NotFound404 from "./components/main/NotFound404";
 import Group from "./components/group/Group";
 import SuccessRegister from './components/register/SuccessRegister'
 import Messenger from "./components/messenger/Messenger"
+import Manage from "./manage/Manage";
 
 const rootReducer = combineReducers({
   auth,
@@ -53,6 +54,7 @@ function App() {
                 <Route path="/group" element={<Group />} />
                 <Route path="/success" element={<SuccessRegister />} />
                 <Route path="/messenger" element={<Messenger />} />
+                <Route path="/manage" element={<Manage />} />
 
                 <Route path="/firebase" element={<UploadDemo />} />
                 <Route path="/*" element={<NotFound404 />} />
