@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { useEffect, useState } from "react";
 import ProfileFeed from "../components/profile/ProfileFeed";
@@ -93,13 +95,11 @@ function Profile(props) {
             />
           </div>
         )}
-
         {status === 1 && (
           <div className="profileRightBottom">
             <About />
           </div>
         )}
-
         {status === 2 && (
           <div className="profileRightBottom">
             <Friends />
