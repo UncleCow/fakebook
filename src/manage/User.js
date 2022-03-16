@@ -1,8 +1,10 @@
-import React from 'react';
-// import './Countries.css';
+import React, { useState } from "react";
 import { DataGrid } from '@material-ui/data-grid';
 import EditIcon from '@material-ui/icons/Edit';
 import DeleteForIcon from '@material-ui/icons/DeleteForever';
+import { Modal } from "react-bootstrap";
+import EditUser from "./EditUser";
+
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -16,14 +18,17 @@ import Snackbar from '@material-ui/core/Snackbar';
 class User extends React.Component {
 	constructor(props) {
 		super(props);
+
 		const columns = [
 			{
 				field: 'actions',
 				headerName: 'Actions',
-				width: 100,
+				width: 130,
 				renderCell: (params) => (
 					<div style={{ marginTop: 10, cursor: 'pointer' }}>
-						<EditIcon onClick={() => this.editRow(params.value)} />
+						<EditIcon
+							onClick={() => this.handleShow(params.value)}
+						/>
 						<DeleteForIcon
 							onClick={() => this.deleteRow(params.value)}
 						/>
@@ -33,7 +38,7 @@ class User extends React.Component {
 			{
 				field: 'id',
 				headerName: 'ID',
-				width: 70,
+				width: 90,
 			},
 			{
 				field: 'username',
@@ -53,7 +58,7 @@ class User extends React.Component {
 			{
 				field: 'phone',
 				headerName: 'Phone number',
-				width: 150,
+				width: 170,
 			},
 			{
 				field: 'avatar',
@@ -63,12 +68,12 @@ class User extends React.Component {
 			{
 				field: 'background',
 				headerName: 'Background',
-				width: 150,
+				width: 160,
 			},
 			{
 				field: 'role_id',
 				headerName: 'Role',
-				width: 90,
+				width: 110,
 			},
 			{
 				field: 'description',
@@ -110,6 +115,8 @@ class User extends React.Component {
 			columns: columns,
 			users: [],
 			selectedObject: props.selectedObject,
+			show: false,
+			editUser: Object.create({ })
 		};
 	}
 
@@ -120,15 +127,30 @@ class User extends React.Component {
 	// 	return { className: props.className, newStudent: props.newStudent };
 	// }
 
-	// editRow = (id) => {
-	// 	console.log('editRow', id);
-	// };
+	
+	handleClose = () => {
+		this.setState({
+			show: false,
+		});
 
-	// deleteRow = (id) => {
-	// 	// console.log('deleteRow', id);
-	// 	// alert('xoá');
-	// 	this.setState({ openConfirmation: true, editID: id });
-	// };
+	};
+
+	handleShow = (id) => {
+		console.log('show', id);
+		const temp = this.state.users.filter((user) => {
+			return user.id == id
+		})
+		this.setState({
+			show: true,
+			editUser: temp[0]
+		});
+		console.log('show', this.state.editUser);
+	};
+
+	deleteRow = (id) => {
+		console.log('deleteRow', id);
+		this.setState({ openConfirmation: true, editID: id });
+	};
 
 	// handleCloseConfirmation = (yes) => {
 	// 	// console.log('handleCloseConfirmation', yes);
@@ -172,6 +194,7 @@ class User extends React.Component {
 					console.log('data', data);
 					const dataArray = data.map((record) => {
 						return {
+							actions: record.id,
 							id: record.id,
 							username: record.username,
 							password: record.password,
@@ -256,6 +279,14 @@ class User extends React.Component {
 				<div style={{ height: 700, width: '100%' }}>
 					<DataGrid rows={displayUsers} columns={this.state.columns} />
 				</div>
+				<Modal show={this.state.show} className="modal" onHide={this.handleClose}>
+					<Modal.Header className="formEditTitle" closeButton>
+						<h4>Edit User With ID: {this.state.editUser.id}</h4>
+					</Modal.Header>
+					<Modal.Body>
+						<EditUser editUser={this.state.editUser}/>
+					</Modal.Body>
+				</Modal>
 			</div>
 		);
 	}
