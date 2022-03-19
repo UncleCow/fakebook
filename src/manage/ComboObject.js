@@ -25,6 +25,8 @@ class ComboObject extends React.Component {
 	};
 
 	render() {
+		console.log('render combo');
+
 		return (
 			<div style={{ minWidth: 200 }}>
 				<Autocomplete

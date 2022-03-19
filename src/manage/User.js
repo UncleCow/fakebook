@@ -1,19 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import { DataGrid } from '@material-ui/data-grid';
-import EditIcon from '@material-ui/icons/Edit';
-import DeleteForIcon from '@material-ui/icons/DeleteForever';
+import PreviewIcon from '@mui/icons-material/Preview';
+import DoDisturbOnIcon from '@mui/icons-material/DoDisturbOn';
+import DoDisturbOffIcon from '@mui/icons-material/DoDisturbOff';
+import GroupsIcon from '@mui/icons-material/Groups';
+import ArticleIcon from '@mui/icons-material/Article';
+import FlagIcon from '@mui/icons-material/Flag';
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import { Modal } from "react-bootstrap";
 import EditUser from "./EditUser";
-
-import Button from '@material-ui/core/Button';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import Snackbar from '@material-ui/core/Snackbar';
-// import Moment from 'react-moment';
-// import moment from 'moment';
+import FriendByID from "./FriendByID";
+import PostByID from "./PostByID";
+import { Routes, Route } from "react-router-dom";
+import PageByID from "./PageByID";
+import GroupByID from "./GroupByID";
 
 class User extends React.Component {
 	constructor(props) {
@@ -23,14 +23,24 @@ class User extends React.Component {
 			{
 				field: 'actions',
 				headerName: 'Actions',
-				width: 130,
+				width: 160,
 				renderCell: (params) => (
 					<div style={{ marginTop: 10, cursor: 'pointer' }}>
-						<EditIcon
-							onClick={() => this.handleShow(params.value)}
+						<PreviewIcon
+							onClick={() => this.inforShow(params.value)}
+							alt='Show more'
 						/>
-						<DeleteForIcon
-							onClick={() => this.deleteRow(params.value)}
+						<PeopleAltIcon
+							onClick={() => this.friendShow(params.value)}
+						/>
+						<ArticleIcon
+							onClick={() => this.postShow(params.value)}
+						/>
+						<FlagIcon
+							onClick={() => this.pageShow(params.value)}
+						/>
+						<GroupsIcon
+							onClick={() => this.groupShow(params.value)}
 						/>
 					</div>
 				),
@@ -38,7 +48,8 @@ class User extends React.Component {
 			{
 				field: 'id',
 				headerName: 'ID',
-				width: 90,
+				width: 100,
+				hover: '123'
 			},
 			{
 				field: 'username',
@@ -83,7 +94,7 @@ class User extends React.Component {
 			{
 				field: 'numberFriends',
 				headerName: 'Number friends',
-				width: 150,
+				width: 180,
 			},
 			{
 				field: 'country',
@@ -98,100 +109,108 @@ class User extends React.Component {
 			{
 				field: 'sex',
 				headerName: 'Gender',
-				width: 90,
+				width: 140,
 			},
 			{
 				field: 'dateCreate',
 				headerName: 'Create date',
-				width: 150,
+				width: 190,
 			},
 			{
 				field: 'birthday',
 				headerName: 'Date of birth',
-				width: 150,
+				width: 190,
 			},
 		];
 		this.state = {
 			columns: columns,
 			users: [],
 			selectedObject: props.selectedObject,
-			show: false,
-			editUser: Object.create({ })
+			editUser: Object.create({}),
+			showInfor: false,
+			showFriend: false,
+			showPost: false,
+			showPage: false,
+			showGroup: false,
+
 		};
 	}
 
-	// static getDerivedStateFromProps(props, state) {
-	// 	console.log(
-	// 		'User getDerivedStateFromProps', props.className, props.newStudent
-	// 	);
-	// 	return { className: props.className, newStudent: props.newStudent };
-	// }
-
-	
-	handleClose = () => {
+	allClose = () => {
 		this.setState({
-			show: false,
+			showInfor: false,
+			showFriend: false,
+			showPost: false,
+			showPage: false,
+			showGroup: false,
 		});
 
 	};
 
-	handleShow = (id) => {
+	inforShow = (id) => {
 		console.log('show', id);
 		const temp = this.state.users.filter((user) => {
-			return user.id == id
+			return user.id === id
 		})
 		this.setState({
-			show: true,
+			showInfor: true,
 			editUser: temp[0]
 		});
 		console.log('show', this.state.editUser);
 	};
 
-	deleteRow = (id) => {
-		console.log('deleteRow', id);
-		this.setState({ openConfirmation: true, editID: id });
+	friendShow = (id) => {
+		console.log('show', id);
+		const temp = this.state.users.filter((user) => {
+			return user.id === id
+		})
+		this.setState({
+			showFriend: true,
+			editUser: temp[0]
+		});
 	};
 
-	// handleCloseConfirmation = (yes) => {
-	// 	// console.log('handleCloseConfirmation', yes);
-	// 	this.setState({ openConfirmation: false });
-	// 	if (yes) {
-	// 		let students = this.state.students;
-	// 		students = students.filter((data) => data.id !== this.state.editID);
-	// 		const totalStudents = this.state.totalStudents - 1;
-	// 		// console.log('test', students);
-	// 		this.setState({ students: students, totalStudents: totalStudents });
-	// 		this.props.handleTotalStudents(totalStudents);
-	// 		this.setState({
-	// 			openSnackbar: true,
-	// 			snackbarInfo: 'Xóa thành công !',
-	// 		});
-	// 	}
-	// };
+	postShow = (id) => {
+		console.log('show', id);
+		const temp = this.state.users.filter((user) => {
+			return user.id === id
+		})
+		this.setState({
+			showPost: true,
+			editUser: temp[0]
+		});
+	};
 
-	// handleSnackbarClose = () => {
-	// 	this.setState({
-	// 		openSnackbar: false,
-	// 	});
-	// };
+	pageShow = (id) => {
+		console.log('show', id);
+		const temp = this.state.users.filter((user) => {
+			return user.id === id
+		})
+		this.setState({
+			showPage: true,
+			editUser: temp[0]
+		});
+	};
 
-	// componentDidUpdate() {
-	// 	console.log('componentDidUpdate');
-	// 	let totalStudents = MyClass.calculateTotalStudents(
-	// 		this.state.selectedClass,
-	// 		this.state.students
-	// 	);
-	// 	this.props.handleTotalStudents(totalStudents);
-	// }
+	groupShow = (id) => {
+		console.log('show', id);
+		const temp = this.state.users.filter((user) => {
+			return user.id === id
+		})
+		this.setState({
+			showGroup: true,
+			editUser: temp[0]
+		});
+	};
 
 	getData = () => {
 		console.log('gettingData');
-		fetch('https://mocki.io/v1/66ae2a1d-6360-4f06-a257-986d9b21444c?fbclid=IwAR2NR7sKONbqg1GKqggw2Kl-R8LCEGcmeYE5cq1sM3UGF4fpYDsaBmB78LM')
+		fetch('http://localhost:8080/FakeStory/api/admin/users')
 			.then((res) => res.json())
 			.then(
 				(data) => {
-					data = [data]
 					console.log('data', data);
+					console.log('idfind', this.props.idFind);
 					const dataArray = data.map((record) => {
 						return {
 							actions: record.id,
@@ -208,8 +227,8 @@ class User extends React.Component {
 							country: record.country,
 							live: record.live,
 							sex: record.sex,
-							dateCreate: record.dateCreate,
-							birthday: record.birthday,
+							dateCreate: new Date(record.dateCreate).toISOString(),
+							birthday: new Date(record.birthday).toISOString(),
 						};
 					});
 					console.log('dataWithId', dataArray);
@@ -229,65 +248,62 @@ class User extends React.Component {
 	}
 
 	render() {
-
 		const displayUsers = [...this.state.users]
 		const totalUsers = displayUsers.length
 		return (
-			// <div style={{ height: 700, width: '100%' }}>
-			// 	<DataGrid rows={displayStudents} columns={this.state.columns} />
-			// 	<Dialog
-			// 		open={this.state.openConfirmation}
-			// 		onClose={() => this.handleCloseConfirmation(false)}
-			// 		aria-labelledby='alert-dialog-title'
-			// 		aria-describedby='alert-dialog-description'
-			// 	>
-			// 		<DialogTitle id='alert-dialog-title'>
-			// 			'Bạn có chắc là muốn xóa sinh viên có ID ={' '}
-			// 			{this.state.editID} ?'
-			// 		</DialogTitle>
-			// 		<DialogContent>
-			// 			<DialogContentText id='alert-dialog-description'></DialogContentText>
-			// 		</DialogContent>
-			// 		<DialogActions>
-			// 			<Button
-			// 				onClick={() => this.handleCloseConfirmation(false)}
-			// 				color='primary'
-			// 			>
-			// 				Hủy
-			// 			</Button>
-			// 			<Button
-			// 				onClick={() => this.handleCloseConfirmation(true)}
-			// 				color='primary'
-			// 				autoFocus
-			// 			>
-			// 				Đồng ý
-			// 			</Button>
-			// 		</DialogActions>
-			// 	</Dialog>
-			// 	<Snackbar
-			// 		anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
-			// 		open={this.state.openSnackbar}
-			// 		onClose={this.handleSnackbarClose}
-			// 		message={this.state.snackbarInfo}
-			// 		key={{ vertical: 'bottom', horizontal: 'right' }}
-			// 	/>
-			// </div>
 			<div>
+				<Routes>
+					<Route path="/post" element={<PostByID userID={this.state.editUser.id} />} />
+				</Routes>
 				<div style={{ textAlign: 'center' }}>
 					Total: {totalUsers}
 				</div>
 				<div style={{ height: 700, width: '100%' }}>
 					<DataGrid rows={displayUsers} columns={this.state.columns} />
 				</div>
-				<Modal show={this.state.show} className="modal" onHide={this.handleClose}>
+
+				{/* infor */}
+				<Modal show={this.state.showInfor} className="modal" onHide={this.allClose} width>
 					<Modal.Header className="formEditTitle" closeButton>
-						<h4>Edit User With ID: {this.state.editUser.id}</h4>
+						<h4>View User With ID: {this.state.editUser.id}</h4>
 					</Modal.Header>
 					<Modal.Body>
-						<EditUser editUser={this.state.editUser}/>
+						<EditUser editUser={this.state.editUser} />
 					</Modal.Body>
 				</Modal>
-			</div>
+
+				{/* friend */}
+				<Modal show={this.state.showFriend} className="modal" onHide={this.allClose}>
+					<Modal.Header className="formEditTitle" closeButton>
+						<h4>View User's Friends With ID: {this.state.editUser.id}</h4>
+					</Modal.Header>
+					<FriendByID userID={this.state.editUser.id}/>
+				</Modal>
+
+				{/* post */}
+				<Modal show={this.state.showPost} className="modal" onHide={this.allClose} width>
+					<Modal.Header className="formEditTitle" closeButton>
+						<h4>View User's Posts With ID: {this.state.editUser.id}</h4>
+					</Modal.Header>
+					<PostByID userID={this.state.editUser.id} />
+				</Modal>
+
+				{/* page */}
+				<Modal show={this.state.showPage} className="modal" onHide={this.allClose} width>
+					<Modal.Header className="formEditTitle" closeButton>
+						<h4>View User's Pages With ID: {this.state.editUser.id}</h4>
+					</Modal.Header>
+					<PageByID userID={this.state.editUser.id} />
+				</Modal>
+
+				{/* group */}
+				<Modal show={this.state.showGroup} className="modal" onHide={this.allClose} width>
+					<Modal.Header className="formEditTitle" closeButton>
+						<h4>View User's Groups With ID: {this.state.editUser.id}</h4>
+					</Modal.Header>
+					<GroupByID userID={this.state.editUser.id} />
+				</Modal>
+			</div >
 		);
 	}
 }

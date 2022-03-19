@@ -5,8 +5,8 @@ import MyAppBar from './MyAppBar';
 import User from './User';
 import Page from './Page';
 import Group from './/Group';
-import Admin from './Admin';
 import Post from './Post';
+import Admin from './Admin';
 
 class Manage extends React.Component {
 	constructor() {
@@ -25,7 +25,7 @@ class Manage extends React.Component {
 	};
 
 	render() {
-
+		console.log('render manage');
 		const object = () => {
 			switch (this.state.selectedObject) {
 
@@ -34,7 +34,7 @@ class Manage extends React.Component {
 				case "Posts": return <Post />;
 				case "Pages": return <Page />;
 				case "Groups": return <Group />;
-				case "Admins":   return <Admin />;
+				case "Admins": return <Admin />;
 
 				default: return <h1 style={{textAlign: 'center'}}>Select object to begin manage!</h1>
 			}

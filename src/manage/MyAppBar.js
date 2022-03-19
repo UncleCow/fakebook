@@ -11,11 +11,7 @@ import Menu from '@material-ui/core/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 import MailIcon from '@material-ui/icons/Mail';
-import NotificationsIcon from '@material-ui/icons/Notifications';
-import EmojiFlagsIcon from '@material-ui/icons/EmojiFlags';
-import PersonAddIcon from '@material-ui/icons/PersonAdd';
 import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
-import MoreIcon from '@material-ui/icons/MoreVert';
 import ComboObject from './ComboObject';
 import MessengerTab from '../components/messenger/MessengerTab';
 
@@ -85,9 +81,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function MyAppBar({
 	handleSelectObjectChange,
-	handleAllAdmin,
 }) {
-	// console.log('MyAppBar', totalStudents);
 	const [selectedObject, selectObjectChange] = React.useState('');
 
 	//temp<<
