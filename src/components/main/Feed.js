@@ -1,25 +1,36 @@
 import React, { useEffect, useState } from "react";
 import StoryReel from "./StoryReel";
-import MessageSender from "./MessageSender";
+import UploadPostSpace from "./UploadPostSpace";
 import Post from "./Post";
 import "../../css/Feed.css";
-import { fetchPost } from "../../store/actions/information";
+import {
+  fetchAllInfo,
+  fetchPost,
+  fetchPostFeed,
+} from "../../store/actions/information";
+import checkLogin from "../login/LogicLogin";
 
 function Feed() {
-  const [post, setPost] = useState();
-  useEffect( async() => {
-    await fetchPost(2).then((data) => {
+  const showAllPosts = () => {
+    return posts ? posts.map(post => <Post post={post} /> ): <></>;
+  }
+  const id = checkLogin();
+  const [posts, setPosts] = useState([]);
+  const [user, setUser] = useState();
+  useEffect(async () => {
+    await fetchAllInfo(id).then((data) => {
       console.log(data);
-      setPost(data);
+      setUser(data);
     });
-  }, [])
+    await fetchPostFeed(id).then((data) => {
+      setPosts(data);
+    });
+  }, []);
   return (
     <div className="feed">
       <StoryReel />
-      <MessageSender />
-      <Post
-        post ={post}
-      />
+      <UploadPostSpace user={user} />
+      {showAllPosts()}
     </div>
   );
 }

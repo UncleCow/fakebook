@@ -1,5 +1,4 @@
 .profile {
-  display: flex;
   margin: 0 auto;
 }
 
@@ -75,4 +74,23 @@
   color: rgb(41, 41, 223);
   background-color: rgb(216, 216, 216);
   border-radius: 7px;
+}
+
+@media only screen and (max-width: 768px) {
+  .profileRightTop {
+    width: 100%;
+  }
+
+  .profileCover {
+    width: 100%;
+  }
+
+  .profileCoverImg {
+    width: 100%;
+  }
+
+  .profileRightBottom {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }

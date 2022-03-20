@@ -1,0 +1,11 @@
+@media only screen and (max-width: 768px) {
+  .pageAboutWrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .uploadPostPage {
+    width: 95%;
+    margin-top: 2vh;
+  }
+}

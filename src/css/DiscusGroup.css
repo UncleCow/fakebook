@@ -1,0 +1,30 @@
+.discus__overview {
+    background-color: #fff;
+    padding: 12px 18px;
+    border-radius: 10px;
+}
+
+.discus__overview-status,
+.discus__overview-dis,
+.discus__overview-general {
+    display: flex;
+}
+
+.discus__overview-status h2,
+.discus__overview-dis h2,
+.discus__overview-general h2 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.discus__overview-status div,
+.discus__overview-dis div,
+.discus__overview-general div {
+    margin-left: 6px;   
+}
+
+.discus__overview h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}

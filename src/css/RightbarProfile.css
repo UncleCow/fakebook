@@ -1,5 +1,5 @@
 .rightbarWrapper {
-  padding: 30px 20px 20px 0;
+  padding: 30px 80px;
 }
 
 .rightbarTitle {
@@ -85,6 +85,7 @@
   padding: 0.5rem 10rem;
   border-radius: 7px;
   border: none;
+  width: 100%;
 }
 
 .button:hover {
@@ -114,4 +115,24 @@
   background-color: rgb(216, 216, 216);
   color: rgb(41, 41, 223);
   border-radius: 7px;
+}
+
+@media only screen and (max-width: 768px) {
+  .rightbarWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+  }
+
+  .subWrapper {
+    width: 100%;
+  }
+
+  .rightbarFollowings {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+  }
 }

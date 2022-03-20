@@ -21,8 +21,9 @@
 
 .forbident .foregroundimg {
   position: relative;
-  width: 100%;
-  top: -230px;
+  width: 70%;
+  margin: auto;
+  top: -300px;
   z-index: 5;
 }
 

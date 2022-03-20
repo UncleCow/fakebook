@@ -1,0 +1,20 @@
+
+.intro__top h2,
+.intro__middle h2,
+.intro__bottom h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.intro__top-like--count,
+.intro__top-flow,
+.intro__bottom-intro div {
+    display: flex;
+    align-items: center;
+}
+
+.intro__top-like-ava,
+.intro__bottom-intro p {
+    margin-left: 40px;
+}

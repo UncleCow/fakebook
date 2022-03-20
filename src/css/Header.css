@@ -1,6 +1,4 @@
-
 .header {
-  padding-right: 70px;
   display: flex;
   justify-content: space-between;
   position: sticky;
@@ -81,7 +79,6 @@
   display: flex;
   align-items: center;
 }
-
 .header__info > a {
   margin: 0 10px;
 } */
@@ -101,7 +98,6 @@
 }
 
 .header {
-  padding-right: 70px;
   display: flex;
   justify-content: space-between;
   position: sticky;
@@ -109,4 +105,25 @@
   z-index: 100;
   top: 0;
   box-shadow: 0px 5px 8px -9px rgba(0, 0, 0, 0.75);
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    height: 10%;
+  }
+
+  .header__left {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .header__input {
+    padding: 0;
+  }
+
+  .header__center {
+    display: none;
+  }
 }

@@ -44,11 +44,14 @@
 }
 
 .friendList img {
-  width: 50%;
   cursor: pointer;
-  border-radius: 50px;
+  border-radius: 1em;
   margin: 0 auto;
   padding: 10px;
+  width: 120px;
+  height: 150px;
+  display: block;
+  margin-top: 1.5em;
 }
 
 .friendList a {
@@ -68,9 +71,21 @@
   margin-bottom: 95px;
   border: none;
   background-color: white;
+  margin-right: 2rem;
 }
 
 .friendList button:hover {
   background-color: rgb(194, 194, 194);
   border-radius: 50%;
+}
+
+@media only screen and (max-width: 768px) {
+  .friendWrapper {
+    margin: 0;
+    margin-top: 2vh;
+  }
+
+  .friendList {
+    padding: 0.5vw;
+  }
 }

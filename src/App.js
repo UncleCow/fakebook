@@ -10,15 +10,18 @@ import auth from "./store/reducers/auth";
 import information from "./store/reducers/information";
 import checkLogin from "./components/login/LogicLogin";
 import Profile from "./nav/Profile";
-import Page from "./nav/Page";
+import Page from "./components/PageFake/Page";
 import Register from "./components/register/Register";
 import UploadDemo from "./firebase/UploadDemo";
+import Post from "./components/main/Post";
 import { fetchAllInfo } from "./store/actions/information";
 import NotFound404 from "./components/main/NotFound404";
+import NotFound from "./components/main/NotFound";
+
 import Group from "./components/group/Group";
-import SuccessRegister from './components/register/SuccessRegister'
 import Messenger from "./components/messenger/Messenger"
 import Manage from "./manage/Manage";
+import SuccessRegister from "./components/register/SuccessRegister";
 
 const rootReducer = combineReducers({
   auth,
@@ -45,8 +48,8 @@ function App() {
             <div className="app__body">
               <Routes>
                 <Route path="/login" element={<Login />} />
-                <Route path="/profile/" element={<Profile  />} />
-                <Route path="/profile/:userId" element={<Profile  />} />
+                <Route path="/profile/" element={<Profile />} />
+                <Route path="/profile/:userId" element={<Profile />} />
                 <Route path="/home" element={<Main />} />
                 <Route path="/main" element={<Main />} />
                 <Route path="/" element={<Main />} />
@@ -55,6 +58,9 @@ function App() {
                 <Route path="/success" element={<SuccessRegister />} />
                 <Route path="/messenger" element={<Messenger />} />
                 <Route path="/manage" element={<Manage />} />
+                <Route path="/post" element={<Post />} />
+                <Route path="/404" element={<NotFound404 />} />
+                <Route path="/403" element={<NotFound />} />
 
                 <Route path="/firebase" element={<UploadDemo />} />
                 <Route path="/*" element={<NotFound404 />} />

@@ -1,10 +1,10 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { useEffect, useState } from "react";
-import ProfileFeed from "../components/main/ProfileFeed";
-import RightBarProfile from "../components/main/RightBarProfile";
-import About from "../components/main/About";
-import Photos from "../components/main/Photos";
-import Friends from "../components/main/Friends";
+import ProfileFeed from "../components/profile/ProfileFeed";
+import RightBarProfile from "../components/profile/RightBarProfile";
+import About from "../components/profile/About";
+import Photos from "../components/profile/Photos";
+import Friends from "../components/profile/Friends";
 import { ImageViewer } from "react-image-viewer-dv";
 import "../css/Profile.css";
 import Header from "../components/main/Header";
@@ -18,9 +18,10 @@ function Profile(props) {
   const [listFriends, setListFriend] = useState([]);
   // const id = props.match.params.id ? props.match.params.id : checkLogin();
   const { userId } = useParams();
+  const userCurrentId = checkLogin();
   const id = userId ? userId : checkLogin();
-  
-  useEffect( async () => {
+
+  useEffect(async () => {
     console.log(id);
     await fetchAllInfo(id).then((data) => {
       console.log(data);
@@ -29,8 +30,8 @@ function Profile(props) {
     await fetch9Friends(id).then((data) => {
       console.log(data);
       setListFriend(data);
-    })
-  },[]);  
+    });
+  }, []);
   const handleClick = (step) => {
     onStatus(step);
   };
@@ -50,14 +51,16 @@ function Profile(props) {
             <ImageViewer>
               <img
                 className="profileUserImg"
-                src={user ? user.avatar  : ""}
+                src={user ? user.avatar : ""}
                 alt="user image"
               />
             </ImageViewer>
           </div>
           <div className="profileInfo">
             <h4 className="profileInfoName">{user ? user.fullname : ""}</h4>
-            <span className="profileInfoDesc">{user ? user.description : ""}</span>
+            <span className="profileInfoDesc">
+              {user ? user.description : ""}
+            </span>
           </div>
           <div className="profileNav">
             <a href="/profile" onClick={() => handleClick(0)}>
@@ -82,8 +85,12 @@ function Profile(props) {
 
         {!status && (
           <div className="profileRightBottom">
-            <ProfileFeed />
-            <RightBarProfile listFriends={listFriends ? listFriends : []} user={user ? user : null} changeStatus={handleClick} />
+            <ProfileFeed isPost={id === userCurrentId ? true : false} />
+            <RightBarProfile
+              listFriends={listFriends ? listFriends : []}
+              user={user ? user : null}
+              changeStatus={handleClick}
+            />
           </div>
         )}
 

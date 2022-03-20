@@ -1,0 +1,9 @@
+.discus__overview {
+    margin-bottom: 22px;
+}
+
+.discus__member-ava,
+.discus__member-admin {
+    margin-top: 16px;
+    display: flex;
+}

@@ -24,10 +24,6 @@ function Header() {
       console.log(data);
       setUser(data);
     });
-    // await fetch9Friends(id).then((data) => {
-    //   console.log(data);
-    //   setListFriend(data);
-    // })
   }, []);
   return (
     <div className="header">
@@ -79,20 +75,6 @@ function Header() {
         </div> */}
 
         <MessengerTab />
-
-        {/* <IconButton className="header__right-icon">
-          <AppRegistrationRoundedIcon />
-        </IconButton>
-        <IconButton className="header__right-icon">
-          <ForumSharpIcon className="is_icon" uk-tooltip="title: Message">
-          </ForumSharpIcon>
-        </IconButton>
-        <IconButton className="header__right-icon">
-          <NotificationsIcon />
-        </IconButton>
-        <IconButton className="header__right-icon">
-          <ArrowDropDownRoundedIcon />
-        </IconButton> */}
       </div>
     </div>
   );
