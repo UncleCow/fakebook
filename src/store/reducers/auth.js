@@ -9,14 +9,14 @@ const initState = {
 export default (state = initState, action) => {
   switch (action.type) {
     case AUTHENTICATION: {
-      // console.log("action", action);
-      // console.log("id", action.id);
+      // ;
+      // ;
       state = { ...state, userId: action.id };
       break;
     }
     case "SAVEUSER": {
-      console.log("action", action);
-      console.log("user", action.user);
+      ;
+      ;
       state = {
         ...state,
         user: action.user,
@@ -24,6 +24,6 @@ export default (state = initState, action) => {
       break;
     }
   }
-  // console.log("state", state);
+  // ;
   return state;
 };

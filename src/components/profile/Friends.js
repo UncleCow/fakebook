@@ -33,7 +33,7 @@ function Friends() {
   const id = userId ? userId : checkLogin();
   useEffect(async () => {
     await fetch9Friends(id).then((data) => {
-      console.log(data);
+      ;
       setListFriends(data);
     });
     

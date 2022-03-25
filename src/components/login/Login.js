@@ -42,7 +42,7 @@ function Login() {
 
   const dispatch = useDispatch();
   const saveUser = useCallback((data) => {
-    console.log("dang sava data");
+    ;
     dispatch({ type: "AUTHENTICATION", id: data.id });
     dispatch({ type: "SAVEUSER", user: data});
   }, []);
@@ -54,19 +54,19 @@ function Login() {
     } else {
       // await login(email, password);
       await login(email, password).then((data) => {
-        console.log(data);
+        ;
         if (data.content === undefined) {
           document.cookie = `id=${data.id};max-age=60*60*24`;
           document.cookie = `username=${data.username};max-age=60*60*24`;
           if (data.id) {
-            console.log("Da dang nhap");
-            console.log(data);
+            ;
+            ;
             saveUser(data);
           }
           window.location.href = "http://localhost:3000/";
         } else {
           const message = data.content;
-          console.log(message);
+          ;
           setMess(message);
         }
       });

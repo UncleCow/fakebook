@@ -6,9 +6,9 @@ export const ShowComment = (props) => {
   const id = props.comment? props.comment.userid : 0;
   const [user, setUser] = useState();
   useEffect(async () => {
-    console.log(id);
+    ;
     await fetchAllInfo(id).then((data) => {
-      console.log(data);
+      ;
       setUser(data);
     });
   }, []);

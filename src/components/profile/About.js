@@ -30,7 +30,7 @@ function About() {
   const handleShow = () => setShow(true);
   useEffect(async () => {
     await fetchAllInfo(id).then((data) => {
-      console.log(data);
+      ;
       setUser(data);
     });
   }, []);

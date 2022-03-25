@@ -22,13 +22,13 @@ function Profile(props) {
   const id = userId ? userId : checkLogin();
 
   useEffect(async () => {
-    console.log(id);
+    ;
     await fetchAllInfo(id).then((data) => {
-      console.log(data);
+      ;
       setUser(data);
     });
     await fetch9Friends(id).then((data) => {
-      console.log(data);
+      ;
       setListFriend(data);
     });
   }, []);

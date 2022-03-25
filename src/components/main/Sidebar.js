@@ -18,13 +18,13 @@ function Sidebar() {
   const [user, setUser] = useState(null);
   const [listPages, setListPages] = useState([]);
   useEffect(async () => {
-    console.log(id);
+    ;
     await fetchAllInfo(id).then((data) => {
-      console.log(data);
+      ;
       setUser(data);
     });
     await fetchAllGroupByUser(id).then((data) => {
-      console.log("list group: ", data);
+      ;
       setListPages(data);
     });
   }, []);

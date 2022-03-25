@@ -12,7 +12,7 @@ export const login = async (username, password) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
+      ;
       return data;
     });
 };

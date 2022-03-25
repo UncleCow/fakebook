@@ -12,17 +12,17 @@ import { useParams } from "react-router-dom";
 
 function ProfileFeed(props) {
   const { userId } = useParams();
-  console.log("userId", userId);
+  ;
   const id = userId ? userId : checkLogin();
   const [user, setUser] = useState();
   const [posts, setPosts] = useState([]);
   useEffect(async () => {
     await fetchAllInfo(id).then((data) => {
-      console.log(data);
+      ;
       setUser(data);
     });
     await fetchPostByUserId(id).then((data) => {
-      console.log(data);
+      ;
       setPosts(data);
     });
   }, []);

@@ -16,7 +16,7 @@ function RouteAdmin() {
     });
   };
   check();
-  console.log("isAdmin", isAdmin);
+  ;
   return (
     <div>
     {isLogin ? <div>

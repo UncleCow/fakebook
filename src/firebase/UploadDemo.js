@@ -25,7 +25,7 @@ const UploadDemo = (props) => {
       return;
     }
     const filename = Math.random().toString(20).substring(2);
-    console.log(filename);
+    ;
     const storageRef = ref(storage, `/file/${filename}`);
     const uploadTask = uploadBytesResumable(storageRef, file);
     uploadTask.on(
@@ -36,7 +36,7 @@ const UploadDemo = (props) => {
         );
         setProgress(prog);
       },
-      (err) => console.log(err),
+      (err) => 
       () => {
         getDownloadURL(uploadTask.snapshot.ref).then((url) => {
           props.setImage(url)
@@ -45,7 +45,7 @@ const UploadDemo = (props) => {
     );
   };
   const idlogin = checkLogin();
-  console.log("idlogin", idlogin);
+  ;
   let [isAdmin, setIsAdmin] = useState("");
   const check = async () => {
     await fetchAllInfo(idlogin).then((data) => {
@@ -53,7 +53,7 @@ const UploadDemo = (props) => {
     });
   };
   check();
-  console.log("isAdmin", isAdmin);
+  ;
   return (
     <div style={{ width: "100%" }}>
       {isAdmin ? (

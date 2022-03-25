@@ -19,9 +19,9 @@ function Header() {
   const id = checkLogin();
   const [user, setUser] = useState();
   useEffect(async () => {
-    console.log(id);
+    ;
     await fetchAllInfo(id).then((data) => {
-      console.log(data);
+      ;
       setUser(data);
     });
   }, []);
