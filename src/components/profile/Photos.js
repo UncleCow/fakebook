@@ -29,7 +29,7 @@ function Photos() {
 
   useEffect(async () => {
     await fetch9Photos(id).then((data) => {
-      console.log(data);
+      ;
       setListPhotos(data);
     });
   }, [id]);

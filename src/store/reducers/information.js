@@ -12,7 +12,7 @@ const initState = {
 const reducer = (state = initState, action) => {
     switch (action.type)    {
         case FETCHFRIENDS : {
-            console.log("action", action);
+            ;
             return{
                 ...state,
                 friends: action,

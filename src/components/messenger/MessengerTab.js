@@ -8,7 +8,7 @@ function MessengerTab() {
   useEffect(async () => {
     const id = checkLogin();
     await fetchAllInfo(id).then((data) => {
-      console.log(data);
+      ;
       setUser(data);
     });
   }, []);

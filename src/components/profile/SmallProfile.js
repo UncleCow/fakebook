@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 export const SmallProfile = (props) => {
   const [link, setLink] = useState("http://localhost:3000/profile/");
   useEffect(() => {
-      console.log(props.user);
+      ;
       const id = props.user ? props.user.id : 0;
       const link = "http://localhost:3000/profile/" + id;
       setLink(link);

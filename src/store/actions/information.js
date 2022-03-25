@@ -8,7 +8,7 @@ export const fetchFriends = async (id) => {
   return fetch(`http://localhost:8080/FakeStory/api/admin/friend?id=${id}`)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
+      ;
       return data;
     });
 };

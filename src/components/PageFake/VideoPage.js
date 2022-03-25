@@ -7,7 +7,7 @@ import "../../css/VideoPage.css"
 
 function VideoPage() {
   const videoRef = useRef()
-  console.log(videoRef.current)
+  
 
   /* const mouseEnter = () => {
     for (let i = 0; i < videoRef.current.length; i++) {

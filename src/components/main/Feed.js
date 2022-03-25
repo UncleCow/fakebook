@@ -19,7 +19,7 @@ function Feed() {
   const [user, setUser] = useState();
   useEffect(async () => {
     await fetchAllInfo(id).then((data) => {
-      console.log(data);
+      ;
       setUser(data);
     });
     await fetchPostFeed(id).then((data) => {

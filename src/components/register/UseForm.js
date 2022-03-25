@@ -12,7 +12,7 @@ const UseForm = Validate => {
 
     const handleChange = e => {
         const { name, value } = e.target;
-        console.log(name, value)
+        
         setValues({
             ...values,
             [name]: value
@@ -22,9 +22,9 @@ const UseForm = Validate => {
     const handleSubmit = (e) => {
         setErrors(Validate(values))
         setIsSubmitting(true)
-        console.log(Validate(values))
+        
         if(!Validate(values).fullname || !Validate(values).username || !Validate(values).password ||  !Validate(values).rePassword){
-            console.log("everything is ok");
+            ;
         }else{
             e.preventDefault();
         }

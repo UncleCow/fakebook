@@ -10,7 +10,7 @@ export const addPost = async (data) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
+      ;
     });
 };
 
@@ -24,7 +24,7 @@ export const reactPost = async(data) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
+      ;
     });
 }
 
