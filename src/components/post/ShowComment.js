@@ -7,13 +7,9 @@ export const ShowComment = (props) => {
   const id = props.userid ? props.userid : 0;
   const [user, setUser] = useState();
   useEffect(async () => {
-<<<<<<< HEAD
-    await fetchAllInfo(id).then((data) => {
-=======
     ;
     await fetchAllInfo(id).then((data) => {
       ;
->>>>>>> 4cbe6c75ee86b15f606c6b3d43167f5b00b68b95
       setUser(data);
     });
   }, []);
