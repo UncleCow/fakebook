@@ -28,9 +28,6 @@ class Post extends React.Component {
 							onClick={() => this.handleShow(params.value)}
 							alt='Show more'
 						/>
-						<a><DeleteForeverIcon
-							onClick={() => this.handleDialogOpen(params.value)}
-						/></a>
 					</div>
 				),
 			},
